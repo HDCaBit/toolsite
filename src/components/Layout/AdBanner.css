@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6px 0;
+  padding: 6px var(--space-md);
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border);
 }
@@ -20,6 +20,23 @@
   margin-bottom: 4px;
 }
 
+/* Leaderboard wrapper — responsive */
+.ad-leaderboard-wrap {
+  width: 100%;
+  max-width: 728px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ad-leaderboard-wrap .adsbygoogle {
+  display: block;
+  width: 100%;
+  max-width: 728px;
+  height: 90px;
+}
+
+/* Placeholder saat slot belum dikonfigurasi */
 .ad-placeholder-banner {
   width: 100%;
   max-width: 728px;
@@ -31,28 +48,35 @@
   align-items: center;
   justify-content: center;
   color: var(--text-muted);
-  font-size: 0.75rem;
-  margin: 0 var(--space-md);
+  font-size: 0.72rem;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 /* Sidebar ad */
 .ad-sidebar-wrap {
   width: 100%;
-}
-.ad-placeholder-box {
-  width: 100%;
-  max-width: 300px;
-  height: 250px;
-  background: var(--bg-secondary);
-  border: 1px dashed var(--border);
-  border-radius: var(--radius-sm);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+.ad-sidebar-wrap .ad-label-text {
+  padding: 6px 0 0;
+}
+.ad-sidebar-wrap .adsbygoogle {
+  display: block;
+  width: 300px;
+  height: 250px;
 }
 
 @media (max-width: 768px) {
-  .ad-placeholder-banner { height: 60px; font-size: 0.7rem; }
+  .ad-leaderboard-wrap, .ad-leaderboard-wrap .adsbygoogle {
+    height: 60px;
+  }
+  .ad-placeholder-banner { height: 60px; }
 }

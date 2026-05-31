@@ -1,37 +1,95 @@
+import { useEffect } from 'react'
 import './AdBanner.css'
 
+// ============================================================
+// KONFIGURASI ADS — Isi slot ID setelah dapat dari AdSense
+// Cara buat ad unit: AdSense Dashboard → Ads → By ad unit
+// → Display ads → beri nama → copy data-ad-slot
+// ============================================================
+const AD_CONFIG = {
+  publisherId: 'ca-pub-4397471641666167',
+  slots: {
+    // Leaderboard 728x90 — di atas header (top banner)
+    leaderboard_top: 'SLOT_ID_TOP',
+    // Leaderboard 728x90 — di bawah footer (bottom banner)
+    leaderboard_bottom: 'SLOT_ID_BOTTOM',
+    // Medium Rectangle 300x250 — sidebar atas
+    sidebar_top: 'SLOT_ID_SIDEBAR_TOP',
+    // Medium Rectangle 300x250 — sidebar bawah
+    sidebar_bottom: 'SLOT_ID_SIDEBAR_BOTTOM',
+  }
+}
+
+// Cek apakah slot sudah dikonfigurasi (bukan placeholder)
+const isSlotReady = (slotId) => slotId && !slotId.startsWith('SLOT_ID_')
+
+function AdUnit({ slotId, format = 'auto', style = {}, className = '' }) {
+  useEffect(() => {
+    // Jalankan adsbygoogle.push setelah komponen mount
+    if (isSlotReady(slotId)) {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({})
+      } catch (e) {
+        // AdSense belum siap / belum diapprove
+      }
+    }
+  }, [slotId])
+
+  if (!isSlotReady(slotId)) {
+    // Tampilkan placeholder jika slot belum dikonfigurasi
+    return (
+      <div className={`ad-placeholder-banner ${className}`} style={style}>
+        <span>Ad slot belum dikonfigurasi — isi AD_CONFIG di AdBanner.jsx</span>
+      </div>
+    )
+  }
+
+  return (
+    <ins
+      className={`adsbygoogle ${className}`}
+      style={{ display: 'block', ...style }}
+      data-ad-client={AD_CONFIG.publisherId}
+      data-ad-slot={slotId}
+      data-ad-format={format}
+      data-full-width-responsive="true"
+    />
+  )
+}
+
+// Banner atas/bawah — Leaderboard 728x90
 export default function AdBanner({ position = 'top' }) {
-  // Replace the data-ad-slot value with your actual Google AdSense slot ID
-  // To activate: uncomment the <ins> tag and remove the placeholder div
+  const slotId = position === 'top'
+    ? AD_CONFIG.slots.leaderboard_top
+    : AD_CONFIG.slots.leaderboard_bottom
+
   return (
     <div className={`ad-banner-wrap ad-${position}`} aria-label="Advertisement">
       <div className="ad-label-text">Advertisement</div>
-      <div className="ad-placeholder-banner">
-        {/* 
-          ACTIVATE ADS: Replace this div with:
-          <ins className="adsbygoogle"
-            style={{ display: 'block' }}
-            data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-            data-ad-slot="XXXXXXXXXX"
-            data-ad-format="auto"
-            data-full-width-responsive="true">
-          </ins>
-          And add this script to index.html:
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-        */}
-        <span>Leaderboard Ad · 728×90 · Place AdSense code here</span>
+      <div className="ad-leaderboard-wrap">
+        <AdUnit
+          slotId={slotId}
+          format="horizontal"
+          style={{ minWidth: 320, maxWidth: 728, height: 90 }}
+        />
       </div>
     </div>
   )
 }
 
-export function AdSidebar() {
+// Sidebar ads — Medium Rectangle 300x250
+export function AdSidebar({ position = 'top' }) {
+  const slotId = position === 'top'
+    ? AD_CONFIG.slots.sidebar_top
+    : AD_CONFIG.slots.sidebar_bottom
+
   return (
     <div className="ad-sidebar-wrap" aria-label="Advertisement">
       <div className="ad-label-text">Advertisement</div>
-      <div className="ad-placeholder-box">
-        <span>Ad · 300×250</span>
-      </div>
+      <AdUnit
+        slotId={slotId}
+        format="rectangle"
+        style={{ width: 300, height: 250 }}
+      />
     </div>
   )
 }
