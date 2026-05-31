@@ -20,3 +20,7 @@
 
 /sitemap.xml
   Cache-Control: public, max-age=86400
+
+/ads.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain
