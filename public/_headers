@@ -1,7 +1,5 @@
-/*
-  Cloudflare Pages Security Headers
-  Applied to all routes
-*/
+# Cloudflare Pages Security Headers
+# Applied to all routes
 
 /*
   X-Frame-Options: DENY
