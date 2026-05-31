@@ -10,13 +10,13 @@ const AD_CONFIG = {
   publisherId: 'ca-pub-4397471641666167',
   slots: {
     // Leaderboard 728x90 — di atas header (top banner)
-    leaderboard_top: 'SLOT_ID_TOP',
+    leaderboard_top: '5233331756',
     // Leaderboard 728x90 — di bawah footer (bottom banner)
-    leaderboard_bottom: 'SLOT_ID_BOTTOM',
+    leaderboard_bottom: '9200496925',
     // Medium Rectangle 300x250 — sidebar atas
-    sidebar_top: 'SLOT_ID_SIDEBAR_TOP',
+    sidebar_top: '4919001367',
     // Medium Rectangle 300x250 — sidebar bawah
-    sidebar_bottom: 'SLOT_ID_SIDEBAR_BOTTOM',
+    sidebar_bottom: '2292838026',
   }
 }
 
