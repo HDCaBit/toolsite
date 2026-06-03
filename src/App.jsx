@@ -41,6 +41,16 @@ import TimezoneConverter from './pages/tools/TimezoneConverter'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import RandomNumber from './pages/tools/RandomNumber'
 
+// Playground
+import AestheticText from './pages/playground/AestheticText'
+import CaptionGenerator from './pages/playground/CaptionGenerator'
+import MemeGenerator from './pages/playground/MemeGenerator'
+import DecisionSpinner from './pages/playground/DecisionSpinner'
+import UsernameGenerator from './pages/playground/UsernameGenerator'
+import EmojiMixer from './pages/playground/EmojiMixer'
+import PlaylistNameGen from './pages/playground/PlaylistNameGen'
+import GradientWallpaper from './pages/playground/GradientWallpaper'
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -80,6 +90,15 @@ export default function App() {
             {/* Generators */}
             <Route path="/tools/qr-code" element={<QrCodeGenerator />} />
             <Route path="/tools/random-number" element={<RandomNumber />} />
+            {/* Playground */}
+            <Route path="/playground/aesthetic-text" element={<AestheticText />} />
+            <Route path="/playground/caption-generator" element={<CaptionGenerator />} />
+            <Route path="/playground/meme-generator" element={<MemeGenerator />} />
+            <Route path="/playground/decision-spinner" element={<DecisionSpinner />} />
+            <Route path="/playground/username-generator" element={<UsernameGenerator />} />
+            <Route path="/playground/emoji-mixer" element={<EmojiMixer />} />
+            <Route path="/playground/playlist-name" element={<PlaylistNameGen />} />
+            <Route path="/playground/gradient-wallpaper" element={<GradientWallpaper />} />
             {/* 404 */}
             <Route path="*" element={<NotFound />} />
           </Routes>
@@ -90,3 +109,4 @@ export default function App() {
     </BrowserRouter>
   )
 }
+

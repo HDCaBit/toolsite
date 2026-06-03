@@ -19,7 +19,7 @@ export default function Footer() {
               <span>Tools<span className="footer-dot">.101142.xyz</span></span>
             </Link>
             <p>Free online tools for everyone. No signup, no popups, no tracking. Just fast, useful tools.</p>
-            <div className="footer-badge">25+ Free Tools</div>
+            <div className="footer-badge">33+ Free Tools</div>
           </div>
 
           {categories.map(cat => (

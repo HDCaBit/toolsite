@@ -30,6 +30,15 @@ const iconMap = {
   faClock: SolidIcons.faClock,
   faQrcode: SolidIcons.faQrcode,
   faDice: SolidIcons.faDice,
+  // Playground
+  faWandMagicSparkles: SolidIcons.faWandMagicSparkles,
+  faQuoteRight: SolidIcons.faQuoteRight,
+  faFaceGrinSquintTears: SolidIcons.faFaceGrinSquintTears,
+  faDharmachakra: SolidIcons.faDharmachakra,
+  faAt: SolidIcons.faAt,
+  faFlask: SolidIcons.faFlask,
+  faMusic: SolidIcons.faMusic,
+  faImage: SolidIcons.faImage,
 }
 
 export function getIcon(iconName) {

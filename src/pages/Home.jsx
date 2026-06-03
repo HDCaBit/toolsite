@@ -44,7 +44,7 @@ export default function Home() {
     <>
       <SEOHead
         title="Tools.101142.xyz — Free Online Tools Collection"
-        description="Free collection of 25+ online tools: percentage calculator, JSON formatter, unit converter, QR code generator, password generator, and more. No signup required."
+        description="Free collection of 33+ online tools: percentage calculator, JSON formatter, unit converter, QR code generator, aesthetic text generator, and more. No signup required."
         keywords="online tools, free calculator, json formatter, unit converter, password generator, qr code generator"
         path="/"
       />
@@ -88,11 +88,11 @@ export default function Home() {
         {/* Stats */}
         <div className="stats-bar">
           <div className="stat-item">
-            <span className="stat-number">25+</span>
+            <span className="stat-number">33+</span>
             <span className="stat-label">Tools</span>
           </div>
           <div className="stat-item">
-            <span className="stat-number">5</span>
+            <span className="stat-number">6</span>
             <span className="stat-label">Categories</span>
           </div>
           <div className="stat-item">

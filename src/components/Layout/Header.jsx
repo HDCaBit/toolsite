@@ -38,6 +38,7 @@ export default function Header() {
           <Link to="/?cat=developer" className="">Developer</Link>
           <Link to="/?cat=text" className="">Text</Link>
           <Link to="/?cat=converter" className="">Converters</Link>
+          <Link to="/?cat=playground" className="" style={{ color: '#a855f7' }}>🎮 Playground</Link>
         </nav>
 
         <button
@@ -58,6 +59,7 @@ export default function Header() {
           <Link to="/?cat=text">✏️ Text Tools</Link>
           <Link to="/?cat=converter">🔄 Converters</Link>
           <Link to="/?cat=generator">🎲 Generators</Link>
+          <Link to="/?cat=playground">🎮 Playground</Link>
         </nav>
       )}
     </header>
