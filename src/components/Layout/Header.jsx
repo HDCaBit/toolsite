@@ -39,6 +39,7 @@ export default function Header() {
           <Link to="/?cat=text" className="">Text</Link>
           <Link to="/?cat=converter" className="">Converters</Link>
           <Link to="/?cat=playground" className="" style={{ color: '#a855f7' }}>🎮 Playground</Link>
+          <a href="https://whisp.101142.xyz/" target="_blank" rel="noopener noreferrer" style={{ color: '#ec4899', fontWeight: 600 }}>✨ WhispSocial</a>
         </nav>
 
         <button
@@ -60,6 +61,7 @@ export default function Header() {
           <Link to="/?cat=converter">🔄 Converters</Link>
           <Link to="/?cat=generator">🎲 Generators</Link>
           <Link to="/?cat=playground">🎮 Playground</Link>
+          <a href="https://whisp.101142.xyz/" target="_blank" rel="noopener noreferrer">✨ WhispSocial</a>
         </nav>
       )}
     </header>

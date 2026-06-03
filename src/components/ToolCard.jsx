@@ -48,13 +48,10 @@ export function getIcon(iconName) {
 export default function ToolCard({ tool }) {
   const icon = getIcon(tool.icon)
 
-  return (
-    <Link
-      to={tool.path}
-      className="tool-card"
-      style={{ '--card-color': tool.color }}
-      aria-label={`Open ${tool.name} tool`}
-    >
+  const isExternal = tool.path.startsWith('http')
+
+  const content = (
+    <>
       <div className="tool-icon-wrap">
         <FontAwesomeIcon icon={icon} />
       </div>
@@ -63,6 +60,32 @@ export default function ToolCard({ tool }) {
       <div className="tool-card-arrow">
         <FontAwesomeIcon icon={faArrowRight} />
       </div>
+    </>
+  )
+
+  if (isExternal) {
+    return (
+      <a
+        href={tool.path}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="tool-card"
+        style={{ '--card-color': tool.color }}
+        aria-label={`Open ${tool.name} tool`}
+      >
+        {content}
+      </a>
+    )
+  }
+
+  return (
+    <Link
+      to={tool.path}
+      className="tool-card"
+      style={{ '--card-color': tool.color }}
+      aria-label={`Open ${tool.name} tool`}
+    >
+      {content}
     </Link>
   )
 }

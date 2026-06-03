@@ -449,6 +449,19 @@ export const tools = [
     seoDescription: 'Free gradient wallpaper maker. Create beautiful custom gradient wallpapers for your phone or desktop. Download as high-resolution PNG.',
     color: '#a855f7',
   },
+  {
+    id: 'whisp-social',
+    name: 'WhispSocial',
+    description: 'A fun and interactive social space for Gen Z. Connect, share, and vibe together.',
+    shortDesc: 'Interactive social space',
+    category: 'playground',
+    icon: 'faHouse',
+    path: 'https://whisp.101142.xyz/',
+    keywords: 'whisp, whispsocial, social media, social space',
+    seoTitle: 'WhispSocial | Tools.101142.xyz',
+    seoDescription: 'WhispSocial - A fun and interactive social space.',
+    color: '#ec4899',
+  },
 ];
 
 export const getToolByPath = (path) => tools.find(t => t.path === path);

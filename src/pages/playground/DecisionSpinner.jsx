@@ -14,19 +14,19 @@ const COLORS = [
 
 const PRESETS = [
   {
-    label: 'Makan Apa?',
+    label: 'What to Eat?',
     emoji: '🍜',
-    options: ['Nasi Goreng', 'Bakso', 'Sate', 'Mie Ayam', 'Gado-gado', 'Rendang', 'Soto', 'Martabak']
+    options: ['Pizza', 'Burger', 'Sushi', 'Pasta', 'Tacos', 'Salad', 'Fried Chicken', 'Steak']
   },
   {
-    label: 'Nonton Apa?',
+    label: 'What to Watch?',
     emoji: '🎬',
     options: ['K-Drama', 'Anime', 'Marvel', 'Horror', 'Comedy', 'Documentary', 'Action', 'Romance']
   },
   {
-    label: 'Ke Mana?',
+    label: 'Where to Go?',
     emoji: '📍',
-    options: ['Mall', 'Pantai', 'Gunung', 'Cafe', 'Bioskop', 'Taman', 'Museum', 'Kolam Renang']
+    options: ['Mall', 'Beach', 'Mountain', 'Cafe', 'Cinema', 'Park', 'Museum', 'Pool']
   }
 ]
 
